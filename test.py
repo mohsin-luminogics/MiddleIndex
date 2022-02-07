@@ -2,12 +2,12 @@
 
 
 def middleIndex(arr, i, j):
-    if arr[i] == arr[j]:
+    if arr[i] != arr[j] and i+1 > j-1:
+        print("NO Index Found")
+        return
+    elif arr[i] == arr[j]:
         if i+1 == j-1:
             print(i+1)
-            return
-        if i+1 > j-1:
-            print("NO Index Found")
             return
         if arr[i+1] == arr[j-1]:
             arr[j-1] = arr[j] + arr[j-1]
@@ -30,7 +30,7 @@ def middleIndex(arr, i, j):
 
 
 def main():
-    arr = [1, 2, 1, 0]
+    arr = [1,2,1,0]
     j = len(arr) - 1
     i = 0
     middleIndex(arr, i, j)
